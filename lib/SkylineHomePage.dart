@@ -16,8 +16,9 @@ class _SkylineHomePageState extends State<SkylineHomePage> {
   DateTime _selectedDate=DateTime.now().add(const Duration(days: 1));
   int? selectedOption = 1;
   final List<List<String>> journeys = [
-    ['New York', 'Los Angeles', '2024-04-03', '3'],
-    ['Paris', 'London', '2024-04-04', '2'],
+    ['FL123', 'New York', 'London', '7 hours', '500.00', '2024-04-05', '10:00'],
+    ['FL456', 'London', 'Paris', '1 hour', '100.00', '2024-04-06', '15:00'],
+    ['FL789', 'Paris', 'Tokyo', '12 hours', '750.00', '2024-04-07', '20:00'],
   ];
 
   Future<void> _selectDate(BuildContext context) async {
@@ -150,6 +151,7 @@ class _SkylineHomePageState extends State<SkylineHomePage> {
               onPressed: (){
                 Navigator.push(
                   context,
+                  //TODO: get the array and pass to journeys
                   MaterialPageRoute(builder: (context) => Flights_details(journeys: journeys,)),
                 );
               },
